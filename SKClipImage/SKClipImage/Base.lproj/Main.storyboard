@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nirisoom.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="B1N-cK-Tr6">
+                                <rect key="frame" x="10" y="373" width="394" height="150"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="jcw-vX-5KP"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1H7-YC-frR">
+                                <rect key="frame" x="287" y="323" width="115" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="2kQ-jS-Ka6"/>
+                                    <constraint firstAttribute="height" constant="40" id="ejw-9o-uFd"/>
+                                </constraints>
+                                <state key="normal" title="Select "/>
+                                <connections>
+                                    <action selector="touchSelectImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxp-cT-kmJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esJ-qX-1d7">
+                                <rect key="frame" x="10" y="323" width="115" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="Alu-Zv-MD3"/>
+                                    <constraint firstAttribute="height" constant="40" id="Yis-VB-ztm"/>
+                                </constraints>
+                                <state key="normal" title="Save "/>
+                                <connections>
+                                    <action selector="touchSaveBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MtU-2U-rtO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC5-v7-qjo">
+                                <rect key="frame" x="0.0" y="283" width="414" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="rbF-aS-31J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B1N-cK-Tr6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="1vt-RD-oyx"/>
+                            <constraint firstItem="B1N-cK-Tr6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MAb-ly-rxl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1H7-YC-frR" secondAttribute="trailing" constant="12" id="P02-Wb-Gkp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B1N-cK-Tr6" secondAttribute="trailing" constant="10" id="PCD-tx-9hZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UC5-v7-qjo" secondAttribute="trailing" id="Rhf-qm-NSc"/>
+                            <constraint firstItem="B1N-cK-Tr6" firstAttribute="top" secondItem="1H7-YC-frR" secondAttribute="bottom" constant="10" id="X3N-XI-7qL"/>
+                            <constraint firstItem="esJ-qX-1d7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="avX-Xf-CQx"/>
+                            <constraint firstItem="esJ-qX-1d7" firstAttribute="top" secondItem="UC5-v7-qjo" secondAttribute="bottom" constant="20" id="cju-oe-2lA"/>
+                            <constraint firstItem="UC5-v7-qjo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dvw-kE-TfC"/>
+                            <constraint firstItem="B1N-cK-Tr6" firstAttribute="top" secondItem="esJ-qX-1d7" secondAttribute="bottom" constant="10" id="fTI-HH-TUB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="B1N-cK-Tr6" id="yom-Gh-lcc"/>
+                        <outlet property="tipsLabel" destination="UC5-v7-qjo" id="eLr-2E-55r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107" y="72"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nirisoom.jpeg" width="3024" height="4032"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
