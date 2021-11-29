@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 传入要裁切的图片
 @property (nonatomic, strong) UIImage *originImage;
+@property (nonatomic,copy)  NSString *imageName;
 
 /// 裁切完成的图片
 @property (nonatomic, copy) void (^clipCompletion)(UIImage *clipImg);

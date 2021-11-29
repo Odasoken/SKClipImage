@@ -26,6 +26,7 @@
 @property (nonatomic, strong) UIImageView *originImageView;
 @property (nonatomic, strong) UIImageView *coverImgView;
 @property (nonatomic,strong)  SKImageClipBorderView *clipView;
+@property (nonatomic,strong)  UILabel *imageNameLabel;
 
 @end
 
@@ -111,6 +112,21 @@
 //    markView.layer.mask = shapeLayer;
     
     [self.view addSubview:_clipView];
+    _imageNameLabel = [[UILabel alloc] init];
+    _imageNameLabel.textColor = [UIColor systemGreenColor];
+    _imageNameLabel.text = self.imageName;
+    _imageNameLabel.font = [UIFont italicSystemFontOfSize:20];
+    _imageNameLabel.textAlignment = NSTextAlignmentCenter;
+    _imageNameLabel.numberOfLines = 0;
+//    _imageNameLabel.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:_imageNameLabel];
+    [_imageNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.mas_equalTo(self.view.mas_top).offset((isX?44 :20));
+        make.width.mas_equalTo(self.view);
+//        make.height.mas_equalTo(40);
+        make.left.mas_equalTo(self.view);
+    }];
 }
 
 /// 底部视图
@@ -282,6 +298,10 @@
     
     // 根据安全区域判断
     if (@available(iOS 11.0, *)){
+        UIWindow *window =  [UIApplication sharedApplication].windows.firstObject;
+        if (window.safeAreaInsets.bottom > 0.0) {
+            return YES;
+        }
         return self.view.safeAreaInsets.bottom > 0.0;
     }
     return NO;
