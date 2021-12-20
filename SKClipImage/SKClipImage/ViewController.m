@@ -22,6 +22,8 @@
     _imageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showClipTool)];
     [_imageView addGestureRecognizer:tap];
+
+    
 }
 -(void)showClipTool
 {

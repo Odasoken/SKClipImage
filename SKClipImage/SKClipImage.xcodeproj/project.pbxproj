@@ -31,7 +31,7 @@
 		043EE4ED27045F9A0000D6FE /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E027045F9A0000D6FE /* MASConstraint.m */; };
 		043EE4EE27045F9A0000D6FE /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E227045F9A0000D6FE /* MASViewConstraint.m */; };
 		043EE4EF27045F9A0000D6FE /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E327045F9A0000D6FE /* MASViewAttribute.m */; };
-		043EE4F7270462530000D6FE /* launch1.png in Resources */ = {isa = PBXBuildFile; fileRef = 043EE4F6270462530000D6FE /* launch1.png */; };
+		043EE4F7270462530000D6FE /* MtDevis.png in Resources */ = {isa = PBXBuildFile; fileRef = 043EE4F6270462530000D6FE /* MtDevis.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +103,7 @@
 		043EE4E227045F9A0000D6FE /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		043EE4E327045F9A0000D6FE /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
 		043EE4E427045F9A0000D6FE /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
-		043EE4F6270462530000D6FE /* launch1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch1.png; sourceTree = "<group>"; };
+		043EE4F6270462530000D6FE /* MtDevis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MtDevis.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +166,7 @@
 				043EE485270457FE0000D6FE /* Assets.xcassets */,
 				043EE4B227045E180000D6FE /* grass.jpeg */,
 				043EE4B127045E180000D6FE /* nirisoom.jpeg */,
-				043EE4F6270462530000D6FE /* launch1.png */,
+				043EE4F6270462530000D6FE /* MtDevis.png */,
 				043EE487270457FE0000D6FE /* LaunchScreen.storyboard */,
 				043EE48A270457FE0000D6FE /* Info.plist */,
 				043EE48B270457FE0000D6FE /* main.m */,
@@ -351,7 +351,7 @@
 				043EE489270457FE0000D6FE /* LaunchScreen.storyboard in Resources */,
 				043EE4B327045E180000D6FE /* nirisoom.jpeg in Resources */,
 				043EE486270457FE0000D6FE /* Assets.xcassets in Resources */,
-				043EE4F7270462530000D6FE /* launch1.png in Resources */,
+				043EE4F7270462530000D6FE /* MtDevis.png in Resources */,
 				043EE484270457FA0000D6FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
