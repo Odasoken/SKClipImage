@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041B5645277578C400F004B9 /* SKClipImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B5644277578C400F004B9 /* SKClipImageHelper.m */; };
+		041B564D2775A06B00F004B9 /* 187.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B564C2775A06B00F004B9 /* 187.png */; };
+		041B56522775A07900F004B9 /* 188.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 041B56512775A07900F004B9 /* 188.jpeg */; };
 		043EE47B270457FA0000D6FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE47A270457FA0000D6FE /* AppDelegate.m */; };
 		043EE47E270457FA0000D6FE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE47D270457FA0000D6FE /* SceneDelegate.m */; };
 		043EE481270457FA0000D6FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE480270457FA0000D6FE /* ViewController.m */; };
@@ -52,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041B5643277578C400F004B9 /* SKClipImageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKClipImageHelper.h; sourceTree = "<group>"; };
+		041B5644277578C400F004B9 /* SKClipImageHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKClipImageHelper.m; sourceTree = "<group>"; };
+		041B564C2775A06B00F004B9 /* 187.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 187.png; sourceTree = "<group>"; };
+		041B56512775A07900F004B9 /* 188.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 188.jpeg; sourceTree = "<group>"; };
 		043EE476270457FA0000D6FE /* SKClipImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKClipImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043EE479270457FA0000D6FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		043EE47A270457FA0000D6FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -166,7 +173,9 @@
 				043EE485270457FE0000D6FE /* Assets.xcassets */,
 				043EE4B227045E180000D6FE /* grass.jpeg */,
 				043EE4B127045E180000D6FE /* nirisoom.jpeg */,
+				041B56512775A07900F004B9 /* 188.jpeg */,
 				043EE4F6270462530000D6FE /* MtDevis.png */,
+				041B564C2775A06B00F004B9 /* 187.png */,
 				043EE487270457FE0000D6FE /* LaunchScreen.storyboard */,
 				043EE48A270457FE0000D6FE /* Info.plist */,
 				043EE48B270457FE0000D6FE /* main.m */,
@@ -199,6 +208,8 @@
 				043EE4BC27045EEA0000D6FE /* SKClipImageController.m */,
 				043EE4BE27045EEA0000D6FE /* SKImageClipBorderView.h */,
 				043EE4BD27045EEA0000D6FE /* SKImageClipBorderView.m */,
+				041B5643277578C400F004B9 /* SKClipImageHelper.h */,
+				041B5644277578C400F004B9 /* SKClipImageHelper.m */,
 			);
 			path = SKClipImageController;
 			sourceTree = "<group>";
@@ -349,10 +360,12 @@
 			files = (
 				043EE4B427045E180000D6FE /* grass.jpeg in Resources */,
 				043EE489270457FE0000D6FE /* LaunchScreen.storyboard in Resources */,
+				041B564D2775A06B00F004B9 /* 187.png in Resources */,
 				043EE4B327045E180000D6FE /* nirisoom.jpeg in Resources */,
 				043EE486270457FE0000D6FE /* Assets.xcassets in Resources */,
 				043EE4F7270462530000D6FE /* MtDevis.png in Resources */,
 				043EE484270457FA0000D6FE /* Main.storyboard in Resources */,
+				041B56522775A07900F004B9 /* 188.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +405,7 @@
 				043EE4C027045EEA0000D6FE /* SKClipImageController.m in Sources */,
 				043EE4E927045F9A0000D6FE /* MASConstraintMaker.m in Sources */,
 				043EE4E627045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				041B5645277578C400F004B9 /* SKClipImageHelper.m in Sources */,
 				043EE4ED27045F9A0000D6FE /* MASConstraint.m in Sources */,
 				043EE4EE27045F9A0000D6FE /* MASViewConstraint.m in Sources */,
 			);
@@ -566,14 +580,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H5T986HY7;
+				DEVELOPMENT_TEAM = 6MVT268PM2;
 				INFOPLIST_FILE = SKClipImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyu.SKClipImage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testter.apptest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -585,14 +599,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H5T986HY7;
+				DEVELOPMENT_TEAM = 6MVT268PM2;
 				INFOPLIST_FILE = SKClipImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyu.SKClipImage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testter.apptest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

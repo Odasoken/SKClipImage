@@ -10,6 +10,7 @@
 #import "UIView+Extend.h"
 #import "Masonry.h"
 #import "SKImageClipBorderView.h"
+#import "SKClipImageHelper.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -27,6 +28,7 @@
 @property (nonatomic, strong) UIImageView *coverImgView;
 @property (nonatomic,strong)  SKImageClipBorderView *clipView;
 @property (nonatomic,strong)  UILabel *imageNameLabel;
+@property (nonatomic,assign,readonly)  CGFloat scrollViewH;
 
 @end
 
@@ -54,6 +56,8 @@
     
     
     // 大背景滑动视图, 承载图片
+    CGFloat scrollViewH =  kScreenHeight - navH - bottomView.height;
+    _scrollViewH = scrollViewH;
     self.scrollView.frame = CGRectMake(0, navH, kScreenWidth, kScreenHeight - navH - bottomView.height);
     [self.view addSubview:self.scrollView];
     _clipView =  [[SKImageClipBorderView alloc] initWithFrame:self.scrollView.frame];
@@ -62,6 +66,9 @@
     CGFloat coverWH = kScreenWidth - kw(28); // 白色剪切框的宽高
     CGFloat imgW = coverWH;
     CGFloat imgH = coverWH;
+    UIImage *currentImage =  self.originImage;
+    CGFloat imgPiexH = currentImage.size.height;
+    CGFloat imgPiexW = currentImage.size.width;
     if (self.originImage.size.width > self.originImage.size.height)
     {
         imgW = imgH * self.originImage.size.width/self.originImage.size.height;
@@ -71,6 +78,15 @@
     }
     
 
+    if (imgW > coverWH) {
+        imgW = coverWH;
+        imgH = imgW * imgPiexH / imgPiexW;
+    }
+    
+    if (imgH > _scrollViewH) {
+        imgH = _scrollViewH;
+        imgW = imgH * imgPiexW/imgPiexH;
+    }
     // 根据图片大小, 加上左右, 上下边距, 设置 contentSize
     CGFloat upDownSpace = self.scrollView.height - coverWH;
     self.scrollView.contentSize = CGSizeMake(imgW + kw(28), imgH + upDownSpace);
@@ -134,6 +150,8 @@
     
     UIView *bgView = [[UIView alloc] initWithFrame:frame];
 
+    
+    
     UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cancleButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
@@ -147,7 +165,9 @@
         make.left.mas_equalTo(0);
     }];
     
-    
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat btnW = kw(60);
+    CGFloat leftMargin = (screenWidth - btnW - kw(15) - btnW * 3) / 3;
     UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     resetButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [resetButton setTitle:@"还原" forState:UIControlStateNormal];
@@ -158,9 +178,22 @@
        
         make.centerY.mas_equalTo(bgView.mas_top).offset(kw(30));
         make.width.height.mas_equalTo(kw(60));
-        make.centerX.mas_equalTo(0);
+        make.left.equalTo(cancleButton.mas_right).offset(leftMargin);
     }];
     
+    
+    UIButton *rotateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    rotateButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    [rotateButton setTitle:@"旋转" forState:UIControlStateNormal];
+    [rotateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rotateButton addTarget:self action:@selector(rotateAction) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:rotateButton];
+    [rotateButton mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.centerY.mas_equalTo(bgView.mas_top).offset(kw(30));
+        make.width.height.mas_equalTo(kw(60));
+        make.left.equalTo(resetButton.mas_right).offset(leftMargin);
+    }];
     
     UIButton *finishButton = [UIButton buttonWithType:UIButtonTypeCustom];
     finishButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -213,6 +246,56 @@
     }
 }
 
+-(void)rotateAction
+{
+    UIImage *currentImage =  self.originImageView.image;
+  
+    if (currentImage) {
+        UIImage *img = [SKClipImageHelper createImage:currentImage degrees:90];
+        self.originImageView.image = img;
+        [self scaleToFitImageView];
+    }
+
+}
+-(void)scaleToFitImageView
+{
+    CGFloat coverWH = kScreenWidth - kw(28); // 白色剪切框的宽高
+    CGFloat imgW = coverWH;
+    CGFloat imgH = coverWH;
+    UIImage *currentImage =  self.originImageView.image;
+    CGFloat imgPiexH = currentImage.size.height;
+    CGFloat imgPiexW = currentImage.size.width;
+    if (imgPiexW > imgPiexH)
+    {
+        imgW = imgH * imgPiexW / imgPiexH;
+    }else
+    {
+        imgH = imgW * imgPiexH / imgPiexW;
+    }
+    
+    
+    if (imgW > coverWH) {
+        imgW = coverWH;
+        imgH = imgW * imgPiexH / imgPiexW;
+    }
+    
+    if (imgH > _scrollViewH) {
+        imgH = _scrollViewH;
+        imgW = imgH * imgPiexW/imgPiexH;
+    }
+
+    // 根据图片大小, 加上左右, 上下边距, 设置 contentSize
+    CGFloat upDownSpace = self.scrollView.height - coverWH;
+    self.scrollView.contentSize = CGSizeMake(imgW + kw(28), imgH + upDownSpace);
+
+    
+    // 等待裁切的图片
+    self.originImageView.frame = CGRectMake(0, 0, imgW, imgH);
+    self.originImageView.center = CGPointMake(self.scrollView.contentSize.width/2, self.scrollView.contentSize.height/2);
+
+    // 移动图片到裁切框的中间
+    self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width-self.scrollView.width)/2, (self.scrollView.contentSize.height-self.scrollView.height)/2);
+}
 /// 完成事件
 - (void)finishAction{
     
