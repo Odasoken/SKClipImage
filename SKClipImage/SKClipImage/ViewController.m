@@ -33,7 +33,7 @@
     clipVC.clipCompletion = ^(UIImage * _Nonnull clipImg) {
         weakSelf.imageView.image = clipImg;
     };
-    clipVC.imageName = @"Chinese rose";
+    clipVC.imageName = @"Tommy Cat";
     clipVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:clipVC animated:true completion:nil];
 }

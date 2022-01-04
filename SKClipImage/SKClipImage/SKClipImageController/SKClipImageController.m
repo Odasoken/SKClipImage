@@ -154,7 +154,7 @@
     
     UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cancleButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [cancleButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancleButton setTitle:SKKLocalizedString(@"SKClipButtonCancelTitle") forState:UIControlStateNormal];
     [cancleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [cancleButton addTarget:self action:@selector(cancleAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:cancleButton];
@@ -170,7 +170,7 @@
     CGFloat leftMargin = (screenWidth - btnW - kw(15) - btnW * 3) / 3;
     UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     resetButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [resetButton setTitle:@"还原" forState:UIControlStateNormal];
+    [resetButton setTitle:SKKLocalizedString(@"SKClipButtonRestoreTitle") forState:UIControlStateNormal];
     [resetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [resetButton addTarget:self action:@selector(resteAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:resetButton];
@@ -184,7 +184,7 @@
     
     UIButton *rotateButton = [UIButton buttonWithType:UIButtonTypeCustom];
     rotateButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [rotateButton setTitle:@"旋转" forState:UIControlStateNormal];
+    [rotateButton setTitle:SKKLocalizedString(@"SKClipButtonRotateTitle") forState:UIControlStateNormal];
     [rotateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [rotateButton addTarget:self action:@selector(rotateAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:rotateButton];
@@ -197,9 +197,9 @@
     
     UIButton *finishButton = [UIButton buttonWithType:UIButtonTypeCustom];
     finishButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    finishButton.layer.backgroundColor = KAppRedColor_FF6A6A.CGColor;
+    finishButton.layer.backgroundColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1.0].CGColor;
     finishButton.layer.cornerRadius = kw(15);
-    [finishButton setTitle:@"完成" forState:UIControlStateNormal];
+    [finishButton setTitle:SKKLocalizedString(@"SKClipButtonFinishTitle") forState:UIControlStateNormal];
     [finishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [finishButton addTarget:self action:@selector(finishAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:finishButton];

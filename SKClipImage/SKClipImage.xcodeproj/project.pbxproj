@@ -35,6 +35,7 @@
 		043EE4EE27045F9A0000D6FE /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E227045F9A0000D6FE /* MASViewConstraint.m */; };
 		043EE4EF27045F9A0000D6FE /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E327045F9A0000D6FE /* MASViewAttribute.m */; };
 		043EE4F7270462530000D6FE /* MtDevis.png in Resources */ = {isa = PBXBuildFile; fileRef = 043EE4F6270462530000D6FE /* MtDevis.png */; };
+		048744882783DFF6008F5E07 /* SKClipImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 048744872783DFF6008F5E07 /* SKClipImage.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		043EE4E327045F9A0000D6FE /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
 		043EE4E427045F9A0000D6FE /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
 		043EE4F6270462530000D6FE /* MtDevis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MtDevis.png; sourceTree = "<group>"; };
+		048744872783DFF6008F5E07 /* SKClipImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKClipImage.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				043EE4BD27045EEA0000D6FE /* SKImageClipBorderView.m */,
 				041B5643277578C400F004B9 /* SKClipImageHelper.h */,
 				041B5644277578C400F004B9 /* SKClipImageHelper.m */,
+				048744872783DFF6008F5E07 /* SKClipImage.bundle */,
 			);
 			path = SKClipImageController;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				043EE4F7270462530000D6FE /* MtDevis.png in Resources */,
 				043EE484270457FA0000D6FE /* Main.storyboard in Resources */,
 				041B56522775A07900F004B9 /* 188.jpeg in Resources */,
+				048744882783DFF6008F5E07 /* SKClipImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
