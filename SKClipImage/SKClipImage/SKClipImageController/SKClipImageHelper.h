@@ -15,7 +15,9 @@
 +(UIImage *)createImage:(UIImage *)originImg degrees:(float)degrees;
 + (CGImageRef)createRotatedImage:(CGImageRef)original degrees:(float)degrees;
 + (NSString *)sk_localizedStringForKey:(NSString *)key;
-
++(UIImage *)roundImage:(UIImage *)originImg cornerRadius:(CGFloat)radius;
++(UIImage *)transparerntImage:(UIImage *)originImg;
++ (BOOL)isIPhoneX :(UIView *)currentView;
 @end
 
 

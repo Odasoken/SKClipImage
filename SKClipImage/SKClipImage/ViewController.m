@@ -7,6 +7,8 @@
 
 #import "ViewController.h"
 #import "SKClipImageController.h"
+#import "SKClipImageHelper.h"
+#import "SKCornerImageViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -22,6 +24,15 @@
     _imageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showClipTool)];
     [_imageView addGestureRecognizer:tap];
+    
+    UIImage *img = [UIImage imageNamed:@"test18"];
+    NSData *imgData = UIImagePNGRepresentation(img);
+//    if (imgData) {
+//        [imgData writeToFile:@"/Users/mac/desktop/hello1" atomically:YES];
+//    }
+    UIImage *roundImg = [SKClipImageHelper roundImage:img cornerRadius:50];
+    UIImageWriteToSavedPhotosAlbum(roundImg, nil, nil, nil);
+    
 
     
 }
@@ -33,7 +44,7 @@
     clipVC.clipCompletion = ^(UIImage * _Nonnull clipImg) {
         weakSelf.imageView.image = clipImg;
     };
-    clipVC.imageName = @"Tommy Cat";
+    clipVC.imageName = @"SKClipImage";
     clipVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:clipVC animated:true completion:nil];
 }
@@ -96,6 +107,11 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
    UIImage *image = info[UIImagePickerControllerOriginalImage];
     self.imageView.image = image;
+}
+- (IBAction)showCornerTool:(UIButton *)sender {
+    SKCornerImageViewController *toolVC = [[SKCornerImageViewController alloc] init];
+    toolVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:toolVC animated:true completion:nil];
 }
 
 @end

@@ -57,6 +57,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cum-cH-3QY">
+                                <rect key="frame" x="314" y="531" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ApQ-N6-GJs"/>
+                                    <constraint firstAttribute="height" constant="30" id="iNA-ix-IvW"/>
+                                </constraints>
+                                <state key="normal" title="Corner Tool"/>
+                                <connections>
+                                    <action selector="showCornerTool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zx7-4D-Yqy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,9 +79,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UC5-v7-qjo" secondAttribute="trailing" id="Rhf-qm-NSc"/>
                             <constraint firstItem="B1N-cK-Tr6" firstAttribute="top" secondItem="1H7-YC-frR" secondAttribute="bottom" constant="10" id="X3N-XI-7qL"/>
                             <constraint firstItem="esJ-qX-1d7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="avX-Xf-CQx"/>
+                            <constraint firstItem="cum-cH-3QY" firstAttribute="top" secondItem="B1N-cK-Tr6" secondAttribute="bottom" constant="8" symbolic="YES" id="cR3-5M-z8S"/>
                             <constraint firstItem="esJ-qX-1d7" firstAttribute="top" secondItem="UC5-v7-qjo" secondAttribute="bottom" constant="20" id="cju-oe-2lA"/>
                             <constraint firstItem="UC5-v7-qjo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dvw-kE-TfC"/>
                             <constraint firstItem="B1N-cK-Tr6" firstAttribute="top" secondItem="esJ-qX-1d7" secondAttribute="bottom" constant="10" id="fTI-HH-TUB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cum-cH-3QY" secondAttribute="trailing" constant="20" id="wpt-GZ-yiE"/>
                         </constraints>
                     </view>
                     <connections>
