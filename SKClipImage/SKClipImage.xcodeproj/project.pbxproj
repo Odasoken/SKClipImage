@@ -40,6 +40,8 @@
 		0448DDD2279F983000302AE2 /* SKImagePreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448DDD1279F983000302AE2 /* SKImagePreviewController.m */; };
 		048744882783DFF6008F5E07 /* SKClipImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 048744872783DFF6008F5E07 /* SKClipImage.bundle */; };
 		04944F97279EA7770066C370 /* test18.png in Resources */ = {isa = PBXBuildFile; fileRef = 04944F96279EA7770066C370 /* test18.png */; };
+		0496250F27BB8F2E00B6ABF7 /* 12333.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0496250E27BB8F2E00B6ABF7 /* 12333.jpeg */; };
+		04EBED8A27C63DED00AD8021 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EBED8927C63DED00AD8021 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		0448DDD1279F983000302AE2 /* SKImagePreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKImagePreviewController.m; sourceTree = "<group>"; };
 		048744872783DFF6008F5E07 /* SKClipImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKClipImage.bundle; sourceTree = "<group>"; };
 		04944F96279EA7770066C370 /* test18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test18.png; sourceTree = "<group>"; };
+		0496250E27BB8F2E00B6ABF7 /* 12333.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12333.jpeg; sourceTree = "<group>"; };
+		04EBED8927C63DED00AD8021 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 				043EE485270457FE0000D6FE /* Assets.xcassets */,
 				043EE4B227045E180000D6FE /* grass.jpeg */,
 				043EE4B127045E180000D6FE /* nirisoom.jpeg */,
+				0496250E27BB8F2E00B6ABF7 /* 12333.jpeg */,
 				04944F96279EA7770066C370 /* test18.png */,
 				041B56512775A07900F004B9 /* 188.jpeg */,
 				043EE4F6270462530000D6FE /* MtDevis.png */,
@@ -227,6 +232,7 @@
 				0448DDC8279F8CB300302AE2 /* SKCornerImageViewController.h */,
 				0448DDC9279F8CB300302AE2 /* SKCornerImageViewController.m */,
 				0448DDCA279F8CB300302AE2 /* SKCornerImageViewController.xib */,
+				04EBED8927C63DED00AD8021 /* Storyboard.storyboard */,
 				0448DDD0279F983000302AE2 /* SKImagePreviewController.h */,
 				0448DDD1279F983000302AE2 /* SKImagePreviewController.m */,
 			);
@@ -379,12 +385,14 @@
 			files = (
 				043EE4B427045E180000D6FE /* grass.jpeg in Resources */,
 				043EE489270457FE0000D6FE /* LaunchScreen.storyboard in Resources */,
+				0496250F27BB8F2E00B6ABF7 /* 12333.jpeg in Resources */,
 				041B564D2775A06B00F004B9 /* 187.png in Resources */,
 				043EE4B327045E180000D6FE /* nirisoom.jpeg in Resources */,
 				043EE486270457FE0000D6FE /* Assets.xcassets in Resources */,
 				043EE4F7270462530000D6FE /* MtDevis.png in Resources */,
 				04944F97279EA7770066C370 /* test18.png in Resources */,
 				0448DDCC279F8CB300302AE2 /* SKCornerImageViewController.xib in Resources */,
+				04EBED8A27C63DED00AD8021 /* Storyboard.storyboard in Resources */,
 				043EE484270457FA0000D6FE /* Main.storyboard in Resources */,
 				041B56522775A07900F004B9 /* 188.jpeg in Resources */,
 				048744882783DFF6008F5E07 /* SKClipImage.bundle in Resources */,

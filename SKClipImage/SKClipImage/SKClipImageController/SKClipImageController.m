@@ -128,21 +128,21 @@
 //    markView.layer.mask = shapeLayer;
     
     [self.view addSubview:_clipView];
-    _imageNameLabel = [[UILabel alloc] init];
-    _imageNameLabel.textColor = [UIColor systemGreenColor];
-    _imageNameLabel.text = self.imageName;
-    _imageNameLabel.font = [UIFont italicSystemFontOfSize:20];
-    _imageNameLabel.textAlignment = NSTextAlignmentCenter;
-    _imageNameLabel.numberOfLines = 0;
-//    _imageNameLabel.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:_imageNameLabel];
-    [_imageNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.top.mas_equalTo(self.view.mas_top).offset((isX?44 :20));
-        make.width.mas_equalTo(self.view);
-//        make.height.mas_equalTo(40);
-        make.left.mas_equalTo(self.view);
-    }];
+//    _imageNameLabel = [[UILabel alloc] init];
+//    _imageNameLabel.textColor = [UIColor systemGreenColor];
+//    _imageNameLabel.text = self.imageName;
+//    _imageNameLabel.font = [UIFont italicSystemFontOfSize:20];
+//    _imageNameLabel.textAlignment = NSTextAlignmentCenter;
+//    _imageNameLabel.numberOfLines = 0;
+//    _imageNameLabel.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:_imageNameLabel];
+//    [_imageNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.top.mas_equalTo(self.view.mas_top).offset((isX?44 :20));
+//        make.width.mas_equalTo(self.view);
+////        make.height.mas_equalTo(40);
+//        make.left.mas_equalTo(self.view);
+//    }];
 }
 
 /// 底部视图
@@ -251,7 +251,9 @@
     UIImage *currentImage =  self.originImageView.image;
   
     if (currentImage) {
-        UIImage *img = [SKClipImageHelper createImage:currentImage degrees:90];
+        UIImage *img =
+        [SKClipImageHelper rotateImage:currentImage indegree:M_PI / 2];
+//        [SKClipImageHelper createImage:currentImage degrees:90];
         self.originImageView.image = img;
         [self scaleToFitImageView];
     }
@@ -265,6 +267,12 @@
     UIImage *currentImage =  self.originImageView.image;
     CGFloat imgPiexH = currentImage.size.height;
     CGFloat imgPiexW = currentImage.size.width;
+    
+    if (imgPiexH==0 || imgPiexW==0) {
+        ///被除数不为0
+        return;
+    }
+    
     if (imgPiexW > imgPiexH)
     {
         imgW = imgH * imgPiexW / imgPiexH;
@@ -291,7 +299,7 @@
     
     // 等待裁切的图片
     self.originImageView.frame = CGRectMake(0, 0, imgW, imgH);
-    self.originImageView.center = CGPointMake(self.scrollView.contentSize.width/2, self.scrollView.contentSize.height/2);
+    self.originImageView.center = CGPointMake(self.scrollView.frame.size.width/2, self.scrollView.frame.size.height/2);
 
     // 移动图片到裁切框的中间
     self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width-self.scrollView.width)/2, (self.scrollView.contentSize.height-self.scrollView.height)/2);
@@ -359,7 +367,7 @@
     if (!_scrollView) {
         
         _scrollView = [[UIScrollView alloc] init];
-        _scrollView.minimumZoomScale = 1.0;
+        _scrollView.minimumZoomScale = 0.85;
         _scrollView.maximumZoomScale = 2.0;
         _scrollView.delegate = self;
     }

@@ -13,11 +13,15 @@
 @interface SKClipImageHelper : NSObject
 
 +(UIImage *)createImage:(UIImage *)originImg degrees:(float)degrees;
++ (UIImage *)rotateImage:(UIImage *)image indegree:(CGFloat)indegree ;
++ (UIImage *)mirroredImage:(UIImage *)image;
 + (CGImageRef)createRotatedImage:(CGImageRef)original degrees:(float)degrees;
 + (NSString *)sk_localizedStringForKey:(NSString *)key;
 +(UIImage *)roundImage:(UIImage *)originImg cornerRadius:(CGFloat)radius;
 +(UIImage *)transparerntImage:(UIImage *)originImg;
 + (BOOL)isIPhoneX :(UIView *)currentView;
+//+( UIImage *)rotateImage:(UIImage *)oldImage;
+
 @end
 
 

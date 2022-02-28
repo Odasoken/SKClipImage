@@ -25,13 +25,17 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showClipTool)];
     [_imageView addGestureRecognizer:tap];
     
-    UIImage *img = [UIImage imageNamed:@"test18"];
-    NSData *imgData = UIImagePNGRepresentation(img);
-//    if (imgData) {
-//        [imgData writeToFile:@"/Users/mac/desktop/hello1" atomically:YES];
-//    }
-    UIImage *roundImg = [SKClipImageHelper roundImage:img cornerRadius:50];
-    UIImageWriteToSavedPhotosAlbum(roundImg, nil, nil, nil);
+    UIImage *img = [UIImage imageNamed:@"12333.jpeg"];
+//    UIImage *img2 = [UIImage imageWithCGImage:img.CGImage scale:img.scale orientation:(UIImageOrientationUpMirrored)];
+//    img2 = [SKClipImageHelper createImage:img2 degrees:90];
+    _imageView.image = img;
+    
+//    NSData *imgData = UIImagePNGRepresentation(img);
+////    if (imgData) {
+////        [imgData writeToFile:@"/Users/mac/desktop/hello1" atomically:YES];
+////    }
+//    UIImage *roundImg = [SKClipImageHelper roundImage:img cornerRadius:50];
+//    UIImageWriteToSavedPhotosAlbum(roundImg, nil, nil, nil);
     
 
     
@@ -77,16 +81,19 @@
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     if (error) {
-        [self showTipsLabel:NO];
+        [self showTipsLabel:NO message:nil];
     }else
     {
-        [self showTipsLabel:YES];
+        [self showTipsLabel:YES message:nil];
     }
 //    NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
 }
--(void)showTipsLabel:(BOOL)isSuccess
+-(void)showTipsLabel:(BOOL)isSuccess message:(NSString *)msg
 {
-    _tipsLabel.text = isSuccess ? @"Success" : @"Fail";
+    if (!msg.length) {
+        msg = isSuccess ? @"Success" : @"Fail";
+    }
+    _tipsLabel.text = msg;
     _tipsLabel.alpha = 0.0;
     [UIView animateWithDuration:0.25 animations:^{
         self.tipsLabel.alpha = 1.0;
@@ -107,11 +114,33 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
    UIImage *image = info[UIImagePickerControllerOriginalImage];
     self.imageView.image = image;
+    
+//    UIImage *img2 = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:(UIImageOrientationDownMirrored)];
+////    img2 = [SKClipImageHelper createImage:img2 degrees:90];
+//    _imageView.image = img2;
 }
 - (IBAction)showCornerTool:(UIButton *)sender {
     SKCornerImageViewController *toolVC = [[SKCornerImageViewController alloc] init];
     toolVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:toolVC animated:true completion:nil];
+}
+- (IBAction)touchMirroredBtn:(UIButton *)sender {
+    UIImage *image =   self.imageView.image;
+    if (!image) {
+        [self showTipsLabel:YES message:@"Empty Image!"];
+        return;
+    }
+    UIImage *img2 = [SKClipImageHelper mirroredImage:image];
+    
+    
+  ////    img2 = [SKClipImageHelper createImage:img2 degrees:90];
+    if (img2) {
+        _imageView.image = img2;
+    }else
+    {
+        [self showTipsLabel:YES message:@"No mirrored Image found!"];
+    }
+  //
 }
 
 @end
