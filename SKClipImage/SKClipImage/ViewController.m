@@ -25,10 +25,9 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showClipTool)];
     [_imageView addGestureRecognizer:tap];
     
-    UIImage *img = [UIImage imageNamed:@"12333.jpeg"];
 //    UIImage *img2 = [UIImage imageWithCGImage:img.CGImage scale:img.scale orientation:(UIImageOrientationUpMirrored)];
 //    img2 = [SKClipImageHelper createImage:img2 degrees:90];
-    _imageView.image = img;
+    
     
 //    NSData *imgData = UIImagePNGRepresentation(img);
 ////    if (imgData) {

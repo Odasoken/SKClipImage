@@ -20,28 +20,15 @@
 		043EE496270457FE0000D6FE /* SKClipImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE495270457FE0000D6FE /* SKClipImageTests.m */; };
 		043EE4A1270457FE0000D6FE /* SKClipImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4A0270457FE0000D6FE /* SKClipImageUITests.m */; };
 		043EE4B327045E180000D6FE /* nirisoom.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 043EE4B127045E180000D6FE /* nirisoom.jpeg */; };
-		043EE4B427045E180000D6FE /* grass.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 043EE4B227045E180000D6FE /* grass.jpeg */; };
 		043EE4C027045EEA0000D6FE /* SKClipImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4BC27045EEA0000D6FE /* SKClipImageController.m */; };
 		043EE4C127045EEA0000D6FE /* SKImageClipBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4BD27045EEA0000D6FE /* SKImageClipBorderView.m */; };
-		043EE4E527045F9A0000D6FE /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4C927045F9A0000D6FE /* UIView+Extend.m */; };
-		043EE4E627045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4CC27045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		043EE4E727045F9A0000D6FE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4D527045F9A0000D6FE /* ViewController+MASAdditions.m */; };
-		043EE4E827045F9A0000D6FE /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4D927045F9A0000D6FE /* MASCompositeConstraint.m */; };
-		043EE4E927045F9A0000D6FE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4DA27045F9A0000D6FE /* MASConstraintMaker.m */; };
-		043EE4EA27045F9A0000D6FE /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4DB27045F9A0000D6FE /* MASLayoutConstraint.m */; };
-		043EE4EB27045F9A0000D6FE /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4DC27045F9A0000D6FE /* NSArray+MASAdditions.m */; };
-		043EE4EC27045F9A0000D6FE /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4DD27045F9A0000D6FE /* View+MASAdditions.m */; };
-		043EE4ED27045F9A0000D6FE /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E027045F9A0000D6FE /* MASConstraint.m */; };
-		043EE4EE27045F9A0000D6FE /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E227045F9A0000D6FE /* MASViewConstraint.m */; };
-		043EE4EF27045F9A0000D6FE /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4E327045F9A0000D6FE /* MASViewAttribute.m */; };
+		043EE4E527045F9A0000D6FE /* UIView+YKTExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 043EE4C927045F9A0000D6FE /* UIView+YKTExtend.m */; };
 		043EE4F7270462530000D6FE /* MtDevis.png in Resources */ = {isa = PBXBuildFile; fileRef = 043EE4F6270462530000D6FE /* MtDevis.png */; };
 		0448DDCB279F8CB300302AE2 /* SKCornerImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448DDC9279F8CB300302AE2 /* SKCornerImageViewController.m */; };
 		0448DDCC279F8CB300302AE2 /* SKCornerImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448DDCA279F8CB300302AE2 /* SKCornerImageViewController.xib */; };
 		0448DDD2279F983000302AE2 /* SKImagePreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448DDD1279F983000302AE2 /* SKImagePreviewController.m */; };
 		048744882783DFF6008F5E07 /* SKClipImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 048744872783DFF6008F5E07 /* SKClipImage.bundle */; };
 		04944F97279EA7770066C370 /* test18.png in Resources */ = {isa = PBXBuildFile; fileRef = 04944F96279EA7770066C370 /* test18.png */; };
-		0496250F27BB8F2E00B6ABF7 /* 12333.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0496250E27BB8F2E00B6ABF7 /* 12333.jpeg */; };
-		04EBED8A27C63DED00AD8021 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EBED8927C63DED00AD8021 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,38 +72,12 @@
 		043EE4A0270457FE0000D6FE /* SKClipImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKClipImageUITests.m; sourceTree = "<group>"; };
 		043EE4A2270457FE0000D6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		043EE4B127045E180000D6FE /* nirisoom.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nirisoom.jpeg; sourceTree = "<group>"; };
-		043EE4B227045E180000D6FE /* grass.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grass.jpeg; sourceTree = "<group>"; };
 		043EE4BC27045EEA0000D6FE /* SKClipImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKClipImageController.m; sourceTree = "<group>"; };
 		043EE4BD27045EEA0000D6FE /* SKImageClipBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKImageClipBorderView.m; sourceTree = "<group>"; };
 		043EE4BE27045EEA0000D6FE /* SKImageClipBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKImageClipBorderView.h; sourceTree = "<group>"; };
 		043EE4BF27045EEA0000D6FE /* SKClipImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKClipImageController.h; sourceTree = "<group>"; };
-		043EE4C927045F9A0000D6FE /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
-		043EE4CB27045F9A0000D6FE /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
-		043EE4CC27045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		043EE4CD27045F9A0000D6FE /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
-		043EE4CE27045F9A0000D6FE /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
-		043EE4CF27045F9A0000D6FE /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		043EE4D027045F9A0000D6FE /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
-		043EE4D127045F9A0000D6FE /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
-		043EE4D227045F9A0000D6FE /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		043EE4D327045F9A0000D6FE /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
-		043EE4D427045F9A0000D6FE /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
-		043EE4D527045F9A0000D6FE /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		043EE4D627045F9A0000D6FE /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
-		043EE4D727045F9A0000D6FE /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
-		043EE4D827045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		043EE4D927045F9A0000D6FE /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
-		043EE4DA27045F9A0000D6FE /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
-		043EE4DB27045F9A0000D6FE /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
-		043EE4DC27045F9A0000D6FE /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		043EE4DD27045F9A0000D6FE /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
-		043EE4DE27045F9A0000D6FE /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		043EE4DF27045F9A0000D6FE /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
-		043EE4E027045F9A0000D6FE /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
-		043EE4E127045F9A0000D6FE /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		043EE4E227045F9A0000D6FE /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
-		043EE4E327045F9A0000D6FE /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
-		043EE4E427045F9A0000D6FE /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
+		043EE4C927045F9A0000D6FE /* UIView+YKTExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YKTExtend.m"; sourceTree = "<group>"; };
+		043EE4E427045F9A0000D6FE /* UIView+YKTExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YKTExtend.h"; sourceTree = "<group>"; };
 		043EE4F6270462530000D6FE /* MtDevis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MtDevis.png; sourceTree = "<group>"; };
 		0448DDC8279F8CB300302AE2 /* SKCornerImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKCornerImageViewController.h; sourceTree = "<group>"; };
 		0448DDC9279F8CB300302AE2 /* SKCornerImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKCornerImageViewController.m; sourceTree = "<group>"; };
@@ -125,8 +86,6 @@
 		0448DDD1279F983000302AE2 /* SKImagePreviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKImagePreviewController.m; sourceTree = "<group>"; };
 		048744872783DFF6008F5E07 /* SKClipImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKClipImage.bundle; sourceTree = "<group>"; };
 		04944F96279EA7770066C370 /* test18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test18.png; sourceTree = "<group>"; };
-		0496250E27BB8F2E00B6ABF7 /* 12333.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12333.jpeg; sourceTree = "<group>"; };
-		04EBED8927C63DED00AD8021 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,12 +143,13 @@
 				043EE47D270457FA0000D6FE /* SceneDelegate.m */,
 				043EE47F270457FA0000D6FE /* ViewController.h */,
 				043EE480270457FA0000D6FE /* ViewController.m */,
+				0448DDC8279F8CB300302AE2 /* SKCornerImageViewController.h */,
+				0448DDC9279F8CB300302AE2 /* SKCornerImageViewController.m */,
+				0448DDCA279F8CB300302AE2 /* SKCornerImageViewController.xib */,
 				043EE482270457FA0000D6FE /* Main.storyboard */,
 				043EE4C827045F9A0000D6FE /* lib */,
 				043EE485270457FE0000D6FE /* Assets.xcassets */,
-				043EE4B227045E180000D6FE /* grass.jpeg */,
 				043EE4B127045E180000D6FE /* nirisoom.jpeg */,
-				0496250E27BB8F2E00B6ABF7 /* 12333.jpeg */,
 				04944F96279EA7770066C370 /* test18.png */,
 				041B56512775A07900F004B9 /* 188.jpeg */,
 				043EE4F6270462530000D6FE /* MtDevis.png */,
@@ -226,15 +186,9 @@
 				043EE4BC27045EEA0000D6FE /* SKClipImageController.m */,
 				043EE4BE27045EEA0000D6FE /* SKImageClipBorderView.h */,
 				043EE4BD27045EEA0000D6FE /* SKImageClipBorderView.m */,
-				041B5643277578C400F004B9 /* SKClipImageHelper.h */,
-				041B5644277578C400F004B9 /* SKClipImageHelper.m */,
-				048744872783DFF6008F5E07 /* SKClipImage.bundle */,
-				0448DDC8279F8CB300302AE2 /* SKCornerImageViewController.h */,
-				0448DDC9279F8CB300302AE2 /* SKCornerImageViewController.m */,
-				0448DDCA279F8CB300302AE2 /* SKCornerImageViewController.xib */,
-				04EBED8927C63DED00AD8021 /* Storyboard.storyboard */,
 				0448DDD0279F983000302AE2 /* SKImagePreviewController.h */,
 				0448DDD1279F983000302AE2 /* SKImagePreviewController.m */,
+				046D190A2852D4AC00B23023 /* SKTool */,
 			);
 			path = SKClipImageController;
 			sourceTree = "<group>";
@@ -242,43 +196,20 @@
 		043EE4C827045F9A0000D6FE /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				043EE4C927045F9A0000D6FE /* UIView+Extend.m */,
-				043EE4CA27045F9A0000D6FE /* Masonry */,
-				043EE4E427045F9A0000D6FE /* UIView+Extend.h */,
 			);
 			path = lib;
 			sourceTree = "<group>";
 		};
-		043EE4CA27045F9A0000D6FE /* Masonry */ = {
+		046D190A2852D4AC00B23023 /* SKTool */ = {
 			isa = PBXGroup;
 			children = (
-				043EE4CB27045F9A0000D6FE /* MASCompositeConstraint.h */,
-				043EE4CC27045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.m */,
-				043EE4CD27045F9A0000D6FE /* MASConstraint+Private.h */,
-				043EE4CE27045F9A0000D6FE /* MASLayoutConstraint.h */,
-				043EE4CF27045F9A0000D6FE /* NSArray+MASShorthandAdditions.h */,
-				043EE4D027045F9A0000D6FE /* MASConstraintMaker.h */,
-				043EE4D127045F9A0000D6FE /* View+MASAdditions.h */,
-				043EE4D227045F9A0000D6FE /* NSArray+MASAdditions.h */,
-				043EE4D327045F9A0000D6FE /* MASUtilities.h */,
-				043EE4D427045F9A0000D6FE /* MASViewAttribute.h */,
-				043EE4D527045F9A0000D6FE /* ViewController+MASAdditions.m */,
-				043EE4D627045F9A0000D6FE /* MASViewConstraint.h */,
-				043EE4D727045F9A0000D6FE /* MASConstraint.h */,
-				043EE4D827045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.h */,
-				043EE4D927045F9A0000D6FE /* MASCompositeConstraint.m */,
-				043EE4DA27045F9A0000D6FE /* MASConstraintMaker.m */,
-				043EE4DB27045F9A0000D6FE /* MASLayoutConstraint.m */,
-				043EE4DC27045F9A0000D6FE /* NSArray+MASAdditions.m */,
-				043EE4DD27045F9A0000D6FE /* View+MASAdditions.m */,
-				043EE4DE27045F9A0000D6FE /* View+MASShorthandAdditions.h */,
-				043EE4DF27045F9A0000D6FE /* Masonry.h */,
-				043EE4E027045F9A0000D6FE /* MASConstraint.m */,
-				043EE4E127045F9A0000D6FE /* ViewController+MASAdditions.h */,
-				043EE4E227045F9A0000D6FE /* MASViewConstraint.m */,
-				043EE4E327045F9A0000D6FE /* MASViewAttribute.m */,
+				041B5643277578C400F004B9 /* SKClipImageHelper.h */,
+				041B5644277578C400F004B9 /* SKClipImageHelper.m */,
+				043EE4E427045F9A0000D6FE /* UIView+YKTExtend.h */,
+				043EE4C927045F9A0000D6FE /* UIView+YKTExtend.m */,
+				048744872783DFF6008F5E07 /* SKClipImage.bundle */,
 			);
-			path = Masonry;
+			path = SKTool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,16 +314,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043EE4B427045E180000D6FE /* grass.jpeg in Resources */,
 				043EE489270457FE0000D6FE /* LaunchScreen.storyboard in Resources */,
-				0496250F27BB8F2E00B6ABF7 /* 12333.jpeg in Resources */,
 				041B564D2775A06B00F004B9 /* 187.png in Resources */,
 				043EE4B327045E180000D6FE /* nirisoom.jpeg in Resources */,
 				043EE486270457FE0000D6FE /* Assets.xcassets in Resources */,
 				043EE4F7270462530000D6FE /* MtDevis.png in Resources */,
 				04944F97279EA7770066C370 /* test18.png in Resources */,
 				0448DDCC279F8CB300302AE2 /* SKCornerImageViewController.xib in Resources */,
-				04EBED8A27C63DED00AD8021 /* Storyboard.storyboard in Resources */,
 				043EE484270457FA0000D6FE /* Main.storyboard in Resources */,
 				041B56522775A07900F004B9 /* 188.jpeg in Resources */,
 				048744882783DFF6008F5E07 /* SKClipImage.bundle in Resources */,
@@ -422,24 +350,14 @@
 			files = (
 				043EE481270457FA0000D6FE /* ViewController.m in Sources */,
 				043EE47B270457FA0000D6FE /* AppDelegate.m in Sources */,
-				043EE4EB27045F9A0000D6FE /* NSArray+MASAdditions.m in Sources */,
 				043EE48C270457FE0000D6FE /* main.m in Sources */,
 				0448DDCB279F8CB300302AE2 /* SKCornerImageViewController.m in Sources */,
-				043EE4EF27045F9A0000D6FE /* MASViewAttribute.m in Sources */,
-				043EE4E527045F9A0000D6FE /* UIView+Extend.m in Sources */,
-				043EE4EA27045F9A0000D6FE /* MASLayoutConstraint.m in Sources */,
-				043EE4EC27045F9A0000D6FE /* View+MASAdditions.m in Sources */,
-				043EE4E827045F9A0000D6FE /* MASCompositeConstraint.m in Sources */,
+				043EE4E527045F9A0000D6FE /* UIView+YKTExtend.m in Sources */,
 				043EE47E270457FA0000D6FE /* SceneDelegate.m in Sources */,
-				043EE4E727045F9A0000D6FE /* ViewController+MASAdditions.m in Sources */,
 				0448DDD2279F983000302AE2 /* SKImagePreviewController.m in Sources */,
 				043EE4C127045EEA0000D6FE /* SKImageClipBorderView.m in Sources */,
 				043EE4C027045EEA0000D6FE /* SKClipImageController.m in Sources */,
-				043EE4E927045F9A0000D6FE /* MASConstraintMaker.m in Sources */,
-				043EE4E627045F9A0000D6FE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				041B5645277578C400F004B9 /* SKClipImageHelper.m in Sources */,
-				043EE4ED27045F9A0000D6FE /* MASConstraint.m in Sources */,
-				043EE4EE27045F9A0000D6FE /* MASViewConstraint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,14 +530,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MVT268PM2;
+				DEVELOPMENT_TEAM = 5H5T986HY7;
 				INFOPLIST_FILE = SKClipImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.testter.apptest1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testter.apptest1ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -631,14 +549,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6MVT268PM2;
+				DEVELOPMENT_TEAM = 5H5T986HY7;
 				INFOPLIST_FILE = SKClipImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.testter.apptest1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testter.apptest1ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

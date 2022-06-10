@@ -7,14 +7,14 @@
 //
 
 #import "SKClipImageController.h"
-#import "UIView+Extend.h"
-#import "Masonry.h"
+#import "UIView+YKTExtend.h"
+//#import "Masonry.h"
 #import "SKImageClipBorderView.h"
 #import "SKClipImageHelper.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define kw(R)   (R) * (kScreenWidth) / 375.0
+#define YKTkw(R)   (R) * (kScreenWidth) / 375.0
 
 #define HEXCOLOR(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0 green:((float)((hex & 0xFF00) >> 8)) / 255.0 blue:((float)(hex & 0xFF)) / 255.0 alpha:1]
 
@@ -39,8 +39,42 @@
     [super viewDidLoad];    
     
     self.view.backgroundColor = [UIColor blackColor];
+    if (!self.originImage) {
+        self.imageNameLabel.text = @"Empty Image!";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            if (self.clipCompletion) {
+                self.clipCompletion(nil);
+            }
+            [self dismiss];
+        });
+        return;
+    }
 
     [self bulidUI];
+}
+-(UILabel *)imageNameLabel
+{
+    if (!_imageNameLabel) {
+            _imageNameLabel = [[UILabel alloc] init];
+            _imageNameLabel.textColor = [UIColor systemGreenColor];
+            _imageNameLabel.text = self.imageName;
+            _imageNameLabel.font = [UIFont italicSystemFontOfSize:20];
+            _imageNameLabel.textAlignment = NSTextAlignmentCenter;
+            _imageNameLabel.numberOfLines = 0;
+            _imageNameLabel.backgroundColor = [UIColor clearColor];
+            [self.view addSubview:_imageNameLabel];
+        BOOL isX = [self isIPhoneX];
+        _imageNameLabel.frame = CGRectMake(0, isX ?44 :20, self.view.ykt_width, 40);
+        //    [_imageNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        //
+        //        make.top.mas_equalTo(self.view.mas_top).offset((isX?44 :20));
+        //        make.width.mas_equalTo(self.view);
+        ////        make.height.mas_equalTo(40);
+        //        make.left.mas_equalTo(self.view);
+        //    }];
+    }
+    return _imageNameLabel;
 }
 
 - (void)bulidUI{
@@ -49,21 +83,21 @@
     CGFloat navH = isX ? 88 : 64;
     
     // 底部视图
-    CGFloat bottomHeight = kw(60) + (isX ? 34 : 0);
+    CGFloat bottomHeight = YKTkw(60) + (isX ? 34 : 0);
     UIView *bottomView = [self bulidBottomViewWithFrame:CGRectMake(0, kScreenHeight - bottomHeight, kScreenWidth, bottomHeight)];
     [self.view addSubview:bottomView];
     
     
     
     // 大背景滑动视图, 承载图片
-    CGFloat scrollViewH =  kScreenHeight - navH - bottomView.height;
+    CGFloat scrollViewH =  kScreenHeight - navH - bottomView.ykt_height;
     _scrollViewH = scrollViewH;
-    self.scrollView.frame = CGRectMake(0, navH, kScreenWidth, kScreenHeight - navH - bottomView.height);
+    self.scrollView.frame = CGRectMake(0, navH, kScreenWidth, kScreenHeight - navH - bottomView.ykt_height);
     [self.view addSubview:self.scrollView];
     _clipView =  [[SKImageClipBorderView alloc] initWithFrame:self.scrollView.frame];
 
     
-    CGFloat coverWH = kScreenWidth - kw(28); // 白色剪切框的宽高
+    CGFloat coverWH = kScreenWidth - YKTkw(28); // 白色剪切框的宽高
     CGFloat imgW = coverWH;
     CGFloat imgH = coverWH;
     UIImage *currentImage =  self.originImage;
@@ -88,8 +122,8 @@
         imgW = imgH * imgPiexW/imgPiexH;
     }
     // 根据图片大小, 加上左右, 上下边距, 设置 contentSize
-    CGFloat upDownSpace = self.scrollView.height - coverWH;
-    self.scrollView.contentSize = CGSizeMake(imgW + kw(28), imgH + upDownSpace);
+    CGFloat upDownSpace = self.scrollView.ykt_height - coverWH;
+    self.scrollView.contentSize = CGSizeMake(imgW + YKTkw(28), imgH + upDownSpace);
 
     
     // 等待裁切的图片
@@ -99,7 +133,7 @@
 
     
     // 移动图片到裁切框的中间
-    self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width-self.scrollView.width)/2, (self.scrollView.contentSize.height-self.scrollView.height)/2);
+    self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width-self.scrollView.ykt_width)/2, (self.scrollView.contentSize.height-self.scrollView.ykt_height)/2);
     
     
     // 白色裁切框
@@ -128,21 +162,7 @@
 //    markView.layer.mask = shapeLayer;
     
     [self.view addSubview:_clipView];
-//    _imageNameLabel = [[UILabel alloc] init];
-//    _imageNameLabel.textColor = [UIColor systemGreenColor];
-//    _imageNameLabel.text = self.imageName;
-//    _imageNameLabel.font = [UIFont italicSystemFontOfSize:20];
-//    _imageNameLabel.textAlignment = NSTextAlignmentCenter;
-//    _imageNameLabel.numberOfLines = 0;
-//    _imageNameLabel.backgroundColor = [UIColor clearColor];
-//    [self.view addSubview:_imageNameLabel];
-//    [_imageNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//        make.top.mas_equalTo(self.view.mas_top).offset((isX?44 :20));
-//        make.width.mas_equalTo(self.view);
-////        make.height.mas_equalTo(40);
-//        make.left.mas_equalTo(self.view);
-//    }];
+
 }
 
 /// 底部视图
@@ -151,35 +171,42 @@
     UIView *bgView = [[UIView alloc] initWithFrame:frame];
 
     
+    CGFloat bgWidth = CGRectGetWidth(frame);
+    CGFloat bgHeight = CGRectGetHeight(frame);
     
-    UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancleButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [cancleButton setTitle:SKKLocalizedString(@"SKClipButtonCancelTitle") forState:UIControlStateNormal];
-    [cancleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [cancleButton addTarget:self action:@selector(cancleAction) forControlEvents:UIControlEventTouchUpInside];
-    [bgView addSubview:cancleButton];
-    [cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.centerY.mas_equalTo(bgView.mas_top).offset(kw(30));
-        make.width.height.mas_equalTo(kw(60));
-        make.left.mas_equalTo(0);
-    }];
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    [cancelButton setTitle:SKKLocalizedString(@"SKClipButtonCancelTitle") forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancleAction) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:cancelButton];
+    CGFloat btnW = YKTkw(60);
+    CGFloat btnY = (bgHeight - btnW) * 0.5 ;
+    cancelButton.frame = CGRectMake(0,btnY, btnW, btnW);
+//    [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.centerY.mas_equalTo(bgView.mas_top).offset(YKTkw(30));
+//        make.width.height.mas_equalTo(YKTkw(60));
+//        make.left.mas_equalTo(0);
+//    }];
     
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat btnW = kw(60);
-    CGFloat leftMargin = (screenWidth - btnW - kw(15) - btnW * 3) / 3;
+    
+    CGFloat leftMargin = (screenWidth - btnW - YKTkw(15) - btnW * 3) / 3;
     UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     resetButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [resetButton setTitle:SKKLocalizedString(@"SKClipButtonRestoreTitle") forState:UIControlStateNormal];
     [resetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [resetButton addTarget:self action:@selector(resteAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:resetButton];
-    [resetButton mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.centerY.mas_equalTo(bgView.mas_top).offset(kw(30));
-        make.width.height.mas_equalTo(kw(60));
-        make.left.equalTo(cancleButton.mas_right).offset(leftMargin);
-    }];
+    CGFloat restBtnX = CGRectGetMaxX(cancelButton.frame) + leftMargin;
+    resetButton.frame = CGRectMake(restBtnX, btnY, btnW, btnW);
+//    [resetButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.centerY.mas_equalTo(bgView.mas_top).offset(YKTkw(30));
+//        make.width.height.mas_equalTo(YKTkw(60));
+//        make.left.equalTo(cancelButton.mas_right).offset(leftMargin);
+//    }];
     
     
     UIButton *rotateButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -188,28 +215,28 @@
     [rotateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [rotateButton addTarget:self action:@selector(rotateAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:rotateButton];
-    [rotateButton mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.centerY.mas_equalTo(bgView.mas_top).offset(kw(30));
-        make.width.height.mas_equalTo(kw(60));
-        make.left.equalTo(resetButton.mas_right).offset(leftMargin);
-    }];
+    CGFloat rotateBtnX = CGRectGetMaxX(resetButton.frame) + leftMargin;
+    rotateButton.frame = CGRectMake(rotateBtnX, btnY, btnW, btnW);
+    
     
     UIButton *finishButton = [UIButton buttonWithType:UIButtonTypeCustom];
     finishButton.titleLabel.font = [UIFont systemFontOfSize:14];
     finishButton.layer.backgroundColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:255/255.0 alpha:1.0].CGColor;
-    finishButton.layer.cornerRadius = kw(15);
+    finishButton.layer.cornerRadius = YKTkw(15);
     [finishButton setTitle:SKKLocalizedString(@"SKClipButtonFinishTitle") forState:UIControlStateNormal];
     [finishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [finishButton addTarget:self action:@selector(finishAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:finishButton];
-    [finishButton mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.centerY.mas_equalTo(bgView.mas_top).offset(kw(30));
-        make.width.mas_equalTo(kw(60));
-        make.height.mas_equalTo(kw(30));
-        make.right.mas_equalTo(-kw(15));
-    }];
+    CGFloat finishBtnX = bgWidth -YKTkw(15) - btnW;
+    finishButton.frame = CGRectMake(finishBtnX, btnY, btnW, YKTkw(30));
+    finishButton.ykt_centerY = rotateButton.ykt_centerY;
+//    [finishButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.centerY.mas_equalTo(bgView.mas_top).offset(YKTkw(30));
+//        make.width.mas_equalTo(YKTkw(60));
+//        make.height.mas_equalTo(YKTkw(30));
+//        make.right.mas_equalTo(-YKTkw(15));
+//    }];
     
     return bgView;
 }
@@ -234,13 +261,13 @@
     
     if (self.scrollView.zoomScale == 1)
     {
-        [self.scrollView setContentOffset:CGPointMake((self.scrollView.contentSize.width - self.scrollView.width) / 2, (self.scrollView.contentSize.height - self.scrollView.height) / 2) animated:YES];
+        [self.scrollView setContentOffset:CGPointMake((self.scrollView.contentSize.width - self.scrollView.ykt_width) / 2, (self.scrollView.contentSize.height - self.scrollView.ykt_height) / 2) animated:YES];
     }else
     {
         [UIView animateWithDuration:0.25 animations:^{
                self.scrollView.zoomScale = 1.0;
            }completion:^(BOOL finished) {
-               [self.scrollView setContentOffset:CGPointMake((self.scrollView.contentSize.width - self.scrollView.width) / 2, (self.scrollView.contentSize.height - self.scrollView.height) / 2) animated:YES];
+               [self.scrollView setContentOffset:CGPointMake((self.scrollView.contentSize.width - self.scrollView.ykt_width) / 2, (self.scrollView.contentSize.height - self.scrollView.ykt_height) / 2) animated:YES];
               
            }];
     }
@@ -261,7 +288,7 @@
 }
 -(void)scaleToFitImageView
 {
-    CGFloat coverWH = kScreenWidth - kw(28); // 白色剪切框的宽高
+    CGFloat coverWH = kScreenWidth - YKTkw(28); // 白色剪切框的宽高
     CGFloat imgW = coverWH;
     CGFloat imgH = coverWH;
     UIImage *currentImage =  self.originImageView.image;
@@ -293,8 +320,8 @@
     }
 
     // 根据图片大小, 加上左右, 上下边距, 设置 contentSize
-    CGFloat upDownSpace = self.scrollView.height - coverWH;
-    self.scrollView.contentSize = CGSizeMake(imgW + kw(28), imgH + upDownSpace);
+    CGFloat upDownSpace = self.scrollView.ykt_height - coverWH;
+    self.scrollView.contentSize = CGSizeMake(imgW + YKTkw(28), imgH + upDownSpace);
 
     
     // 等待裁切的图片
@@ -302,7 +329,7 @@
     self.originImageView.center = CGPointMake(self.scrollView.frame.size.width/2, self.scrollView.frame.size.height/2);
 
     // 移动图片到裁切框的中间
-    self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width-self.scrollView.width)/2, (self.scrollView.contentSize.height-self.scrollView.height)/2);
+    self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width-self.scrollView.ykt_width)/2, (self.scrollView.contentSize.height-self.scrollView.ykt_height)/2);
 }
 /// 完成事件
 - (void)finishAction{
@@ -351,8 +378,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    CGFloat upDownSpace = self.scrollView.height - (kScreenWidth - kw(28));
-    self.scrollView.contentSize = CGSizeMake(self.originImageView.width + kw(28), self.originImageView.height + upDownSpace);
+    CGFloat upDownSpace = self.scrollView.ykt_height - (kScreenWidth - YKTkw(28));
+    self.scrollView.contentSize = CGSizeMake(self.originImageView.ykt_width + YKTkw(28), self.originImageView.ykt_height + upDownSpace);
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
