@@ -279,7 +279,7 @@
   
     if (currentImage) {
         UIImage *img =
-        [SKClipImageHelper rotateImage:currentImage indegree:M_PI / 2];
+        [SKClipImageHelper rotateImage:currentImage rotation:UIImageOrientationRight];
 //        [SKClipImageHelper createImage:currentImage degrees:90];
         self.originImageView.image = img;
         [self scaleToFitImageView];

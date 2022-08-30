@@ -14,6 +14,7 @@
 
 +(UIImage *)createImage:(UIImage *)originImg degrees:(float)degrees;
 + (UIImage *)rotateImage:(UIImage *)image indegree:(CGFloat)indegree ;
++ (UIImage *)rotateImage:(UIImage *)image rotation:(UIImageOrientation)orientation;
 + (UIImage *)mirroredImage:(UIImage *)image;
 + (CGImageRef)createRotatedImage:(CGImageRef)original degrees:(float)degrees;
 + (NSString *)sk_localizedStringForKey:(NSString *)key;
